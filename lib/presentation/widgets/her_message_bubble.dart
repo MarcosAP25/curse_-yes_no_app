@@ -18,7 +18,7 @@ class HerMessageBubble extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
             child: Text(
-              'Eres muy guapo',
+              'Hola, como estas?',
               style: TextStyle(
                 color: colors.onPrimary
               ),
@@ -54,11 +54,15 @@ class _ImageMeme extends StatelessWidget {
           if(loadingProgress == null){
             return child;
           }
-          return Center(
-            child: CircularProgressIndicator(
-              value: loadingProgress.expectedTotalBytes != null 
-              ? loadingProgress.cumulativeBytesLoaded / loadingProgress.expectedTotalBytes!
-              : null
+          return SizedBox(
+            width: size.width *0.7,
+            height: 200,
+            child: Center(
+              child: CircularProgressIndicator(
+                value: loadingProgress.expectedTotalBytes != null 
+                ? loadingProgress.cumulativeBytesLoaded / loadingProgress.expectedTotalBytes!
+                : null
+              ),
             ),
           );
         },
